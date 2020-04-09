@@ -1,0 +1,26 @@
+{
+  "name": "alura-timer",
+  "version": "1.0.0",
+  "description": "Projeto do curso de Electron da Alura.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bruno-negreiros/alura-timer.git"
+  },
+  "keywords": [
+    "electron"
+  ],
+  "author": "Bruno Ananias Negreiros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bruno-negreiros/alura-timer/issues"
+  },
+  "homepage": "https://github.com/bruno-negreiros/alura-timer#readme",
+  "dependencies": {
+    "electron": "^1.6.1"
+  }
+}
