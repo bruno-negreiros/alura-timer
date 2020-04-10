@@ -17,12 +17,22 @@ app.on('window-all-closed', () => {
 let sobreWindow;
 ipcMain.on('abrir-janela-sobre', () => {
     if (!sobreWindow) {
-        sobreWindow = new BrowserWindow({width: 300, height: 200});
-        sobreWindow.loadURL(`file://${__dirname}/app/sobre.html`);
-    }
+        sobreWindow = new BrowserWindow(
+            { 
+                width: 300,
+                height: 200,
+                alwaysOnTop: false, // se ao clicar fora da janela, a mesma irá perder o foco.
+                frame: false, // barra com opções de maximinizar, minimizar e fechar.
+            });
 
-    sobreWindow.on('closed', () => {
-        sobreWindow = null; // 'Ressuscita' a variável sobreWindow, pois ao fechar a janela
-                            // a mesma é destruída, já que ela representa a janela.
-    });
+        sobreWindow.on('closed', () => {
+            sobreWindow = null; // 'Ressuscita' a variável sobreWindow, pois ao fechar a janela
+                                // a mesma é destruída, já que ela representa a janela.
+        });
+    }
+    sobreWindow.loadURL(`file://${__dirname}/app/sobre.html`);
+});
+
+ipcMain.on('fechar-janela-sobre', () => {
+    sobreWindow.close();
 });
