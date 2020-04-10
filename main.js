@@ -20,8 +20,8 @@ ipcMain.on('abrir-janela-sobre', () => {
         sobreWindow = new BrowserWindow(
             { 
                 width: 300,
-                height: 200,
-                alwaysOnTop: false, // se ao clicar fora da janela, a mesma irá perder o foco.
+                height: 220,
+                alwaysOnTop: true, // a janela sempra ficará acima de outras janelas.
                 frame: false, // barra com opções de maximinizar, minimizar e fechar.
             });
 
