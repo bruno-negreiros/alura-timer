@@ -11,9 +11,11 @@ module.exports = {
 
         timer = setInterval(() => {
             segundos ++;
-            tempo = this.segundosParaTempos(segundos);
-            elem.textContent = tempo;
+            elem.textContent = this.segundosParaTempos(segundos);;
         }, 1000);
+    },
+    parar() {
+        clearInterval(timer);
     },
     segundosParaTempos(segundos) {
         return moment().startOf('day').seconds(segundos).format('HH:mm:ss');
