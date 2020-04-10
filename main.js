@@ -14,7 +14,15 @@ app.on('window-all-closed', () => {
     app.quit();
 });
 
+let sobreWindow;
 ipcMain.on('abrir-janela-sobre', () => {
-    let sobreWindow = new BrowserWindow({width: 300, height: 200});
-    sobreWindow.loadURL(`file://${__dirname}/app/sobre.html`);
+    if (!sobreWindow) {
+        sobreWindow = new BrowserWindow({width: 300, height: 200});
+        sobreWindow.loadURL(`file://${__dirname}/app/sobre.html`);
+    }
+
+    sobreWindow.on('closed', () => {
+        sobreWindow = null; // 'Ressuscita' a variável sobreWindow, pois ao fechar a janela
+                            // a mesma é destruída, já que ela representa a janela.
+    });
 });
