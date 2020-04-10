@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/bruno-negreiros/alura-timer#readme",
   "dependencies": {
-    "electron": "^1.6.1"
+    "electron": "^1.6.1",
+    "moment": "^2.17.1"
   }
 }
