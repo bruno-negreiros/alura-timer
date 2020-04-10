@@ -36,3 +36,7 @@ ipcMain.on('abrir-janela-sobre', () => {
 ipcMain.on('fechar-janela-sobre', () => {
     sobreWindow.close();
 });
+
+ipcMain.on('curso-parado', (event, curso, tempo) => {
+    console.log(`O curso ${curso} foi estudado por ${tempo}.`);
+});
