@@ -2,6 +2,10 @@ const jsonfile = require('jsonfile-promised');
 const fs = require('fs');
 
 module.exports = {
+    pegaDados(curso) {
+        let arquivoDoCurso = `${__dirname}/data/${curso}.json`;
+        return jsonfile.readFile(arquivoDoCurso);
+    },
     salvaDados(curso, tempoEstudado) {
         let arquivoDoCurso = `${__dirname}/data/${curso}.json`;
 
